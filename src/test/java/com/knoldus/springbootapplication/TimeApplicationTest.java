@@ -10,17 +10,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class TimeApplicationTest {
 
     TimeApplication timeApplication = new TimeApplication();
-    Date date = new Date();
+    Date time = new Date();
 
     @Test
-    void getCurrentTimePass() {
+    void whenGetCurrentTimeMethodIsCalledItShouldReturnValidTime() {
          String getFinalTime = timeApplication.getCurrentTime();
          DateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
-         String currentTime = dateFormat.format(date);
+         String currentTime = dateFormat.format(time);
         assertEquals(getFinalTime, "Successfully running API : ".concat(currentTime));
     }
     @Test
-    void getCurrentTimeFail() {
+    void whenGetCurrentTimeMethodIsCalledItShouldReturnInvalidTime() {
         String getFinalTime = timeApplication.getCurrentTime();
         String currentTime = String.valueOf(LocalTime.now());
         assertNotEquals(getFinalTime,("Successfully running API : ".concat(currentTime)));

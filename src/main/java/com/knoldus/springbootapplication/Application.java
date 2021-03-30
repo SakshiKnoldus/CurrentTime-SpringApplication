@@ -1,12 +1,13 @@
 package com.knoldus.springbootapplication;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Application class contains main and runs the spring boot application.
  */
-public final class Application {
-  private Application() { }
+@SpringBootApplication
+public class Application {
   /**
    * main method run the application.
    *
@@ -14,6 +15,6 @@ public final class Application {
    */
 
   public static void main(final String[] args) {
-    SpringApplication.run(TimeApplication.class, args);
+    SpringApplication.run(Application.class, args);
   }
 }
